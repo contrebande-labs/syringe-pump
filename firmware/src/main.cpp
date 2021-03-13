@@ -58,11 +58,11 @@ void setup() {
 
   dispense_steps = round(DISPENSE_ROTATION_COUNT * STEPS_PER_ROTATION * MICROSTEPS_PER_STEP);
   
-  // initialize digital pin DISPENSE_LED_PIN as an output.
+  // initialize LED digital pin as an output
   pinMode(DISPENSE_LED_PIN, OUTPUT);
   digitalWrite(DISPENSE_LED_PIN, LOW);
 
-  // initialize the pushbutton pin as an input:
+  // initialize pushbutton pins as inputs
   pinMode(FAST_DISPENSE_5ML_BUTTON_PIN, INPUT);
   pinMode(SLOW_DISPENSE_5ML_BUTTON_PIN, INPUT);
   pinMode(FAST_REWIND_BUTTON_PIN, INPUT);
