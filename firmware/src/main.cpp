@@ -78,6 +78,8 @@ void setup() {
 
   uStepper->setControlThreshold(CONTROL_THRESHOLD);
 
+  uStepper->setMaxDeceleration(2000000);
+
   Serial.println("READY");
 
   ready = true;
@@ -119,13 +121,13 @@ void dispense(uint16_t maxVelocity) {
       diff = -1;
       diff_max = -1;
       dispensing = true;
-    
+
       pos_start = uStepper->driver.getPosition();
-  
+
       pos_target = DISPENSE_MICROSTEP_COUNT + pos_start;
-  
+
       uStepper->setMaxVelocity(maxVelocity);
-  
+
       uStepper->moveSteps(DISPENSE_MICROSTEP_COUNT);
       
       digitalWrite(DISPENSE_LED_PIN, HIGH);
