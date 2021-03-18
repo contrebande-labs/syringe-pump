@@ -684,9 +684,6 @@ private:
 	void chipSelect( uint8_t pin , bool state );
 
 	void filterSpeedPos(posFilter_t *filter, int32_t steps);
-
-	void pid(float error);
-	
 };
 
 
