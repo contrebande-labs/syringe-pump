@@ -459,7 +459,7 @@ void uStepperS::filterSpeedPos(posFilter_t *filter, int32_t steps)
 }
 
 void TIMER1_COMPA_vect(void) {
-
+/*
 	uStepperS * pointer = uStepperS::getInstance();
 
 	pointer->encoder.captureAngle();
@@ -481,6 +481,7 @@ void TIMER1_COMPA_vect(void) {
 		pointer->currentPidSpeed = pointer->encoder.encoderFilter.velIntegrator * ENCODERDATATOSTEP;
 
 	}
+*/
 }
 
 void uStepperS::setControlThreshold(float threshold)
