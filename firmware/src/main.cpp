@@ -21,7 +21,7 @@
 /*
 #define SYRINGE_DIAMETER_MM 34.8
 #define DISPENSE_QUANTITY_ML 5
-#define LEAD_SCREW_PITCH 1.5
+#define LEAD_SCREW_PITCH 15
 
 static const float SYRINGE_DIAMETER_CM = SYRINGE_DIAMETER_MM / 10;
 static const float SYRINGE_RADIUS_CM = SYRINGE_DIAMETER_CM / 2;
@@ -37,8 +37,8 @@ static const uint16_t MAX_STEPS_PER_SECOND_FAST = (MAX_RPM_FAST / 60) * STEPS_PE
 static const uint32_t DISPENSE_MICROSTEP_COUNT = DISPENSE_ROTATION_COUNT * STEPS_PER_ROTATION * MICROSTEPS_PER_STEP;
 */
 #define MAX_STEPS_PER_SECOND_SLOW 200
-#define MAX_STEPS_PER_SECOND_FAST 600
-#define DISPENSE_MICROSTEP_COUNT 179432
+#define MAX_STEPS_PER_SECOND_FAST 400
+#define DISPENSE_MICROSTEP_COUNT 17943 // 179432 when p=1.5 
 
 static uStepperS stepper;
 
@@ -78,10 +78,12 @@ void setup() {
     80, // runCurrent  Sets the current (in percent) to use while motor is running, default = 50.0
     10 // holdCurrent Sets the current (in percent) to use while motor is NOT running, default = 30.0
   );
- 
+
   stepper.checkOrientation(CHECK_ORIENTATION_MICROSTEPS);
 
   stepper.setControlThreshold(CONTROL_THRESHOLD);
+ 
+  stepper.disablePid();
 
   Serial.println("READY");
 
@@ -115,7 +117,7 @@ void checkDispensingPosition() {
 }
 
 
-void dispense(float maxVelocity) {
+void dispense(uint16_t maxVelocity) {
 
       pos = -1;
       pos_start = -1;

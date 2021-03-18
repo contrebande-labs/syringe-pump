@@ -539,18 +539,6 @@ public:
 	void disablePid(void);
 
 	/**
-	 * @brief      	This method reenables the closed loop mode after being disabled.
-	 *
-	 */
-	void enableClosedLoop(void);
-
-	/**
-	 * @brief      	This method disables the closed loop mode until calling enableClosedLoop.
-	 *
-	 */
-	void disableClosedLoop(void);
-
-	/**
 	 * @brief      	This method sets the control threshold for the closed loop position control in microsteps - i.e. it is the allowed control error. 10 microsteps is suitable in most applications.
 	 *
 	 */

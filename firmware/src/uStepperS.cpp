@@ -540,16 +540,6 @@ void uStepperS::disablePid(void)
 	sei();
 }
 
-void uStepperS::enableClosedLoop(void)
-{
-	this->enablePid();
-}
-
-void uStepperS::disableClosedLoop(void)
-{
-	this->disablePid();
-}
-
 float uStepperS::moveToEnd(bool dir, float rpm, int8_t threshold)
 {
 	// Lowest reliable speed for stallguard
