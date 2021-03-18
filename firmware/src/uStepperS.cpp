@@ -459,8 +459,6 @@ void uStepperS::filterSpeedPos(posFilter_t *filter, int32_t steps)
 }
 
 void TIMER1_COMPA_vect(void) {
-	
-	sei();
 
 	uStepperS * pointer = uStepperS::getInstance();
 
