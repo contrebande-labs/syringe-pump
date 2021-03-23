@@ -80,6 +80,11 @@ uint16_t Encoder::captureAngle()
 	int32_t deltaAngle;
 	uint16_t curAngle;
 
+	/*
+	int64_t *= 51200;
+	int64_t /= 65536;
+	*/
+
 	chipSelect(true);  // Set CS HIGH
 	
 	/* Write dummy and read the incoming 8 bits */

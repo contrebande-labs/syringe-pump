@@ -75,12 +75,14 @@ void setup() {
     10 // holdCurrent Sets the current (in percent) to use while motor is NOT running, default = 30.0
   );
 
+  
+/*
   controller->checkOrientation();
 
   controller->setControlThreshold(CONTROL_THRESHOLD);
 
   controller->setMaxDeceleration(2000000);
-
+*/
   Serial.println("READY");
 
   ready = true;
